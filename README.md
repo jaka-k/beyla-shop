@@ -1,3 +1,17 @@
+
+? Next.js for Static Site Generator
+? Integrate with Tailwind CSS (w/ JIT mode)
+
+I decided to do this project in Next.js because of its superior SSR abilities towards a regular React.js project.
+
+The choice of Tailwindcss as the CSS framework was mainly because of its convinience of writting CSS directly in JS code.
+
+Instead of using a UI framework like Bootstrap, I used componenets from different UI kits that were written in Tailwind, which I coul then costumize.
+
+Nonethless the componennts need some adjustments for Next.js
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
