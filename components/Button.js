@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Button({actionName}) {
+function Button({actionName, classAddon}) {
   return (
     <button
       type="button"
-      className="font-medium bg-gray-900 dark:bg-white shadow-md rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 active:scale-90 duration-150 hover:shadow-xl">
+      className={"font-medium shadow-md rounded-lg text-sm px-5 py-2.5 text-center active:scale-90 duration-150 hover:shadow-xl " + classAddon}>
       {actionName}
     </button>
   );

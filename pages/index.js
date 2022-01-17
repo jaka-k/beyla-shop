@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import AboutBanner from '../components/AboutBanner'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
 import ProductGrid from '../components/ProductGrid'
+import Testimonials from '../components/Testimonials'
 
 
 export default function Home() {
@@ -17,6 +19,8 @@ export default function Home() {
       <Header/>
       <Banner/>
       <ProductGrid/>
+      <AboutBanner/>
+      <Testimonials/>
 
       <footer>
         <a
