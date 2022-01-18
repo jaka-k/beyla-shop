@@ -9,7 +9,7 @@ import Testimonials from '../components/Testimonials'
 
 export default function Home() {
   return (
-    <div>
+    <div className='font-Raleway'>
       <Head>
         <title>Beyla - Apicosmetics</title>
         <meta name="beyla apicosmetics shop" content="Beyla Apicosmetics - Natural Skincare" />

@@ -12,7 +12,7 @@ function products() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Header/>
-        <section className="text-gray-700 body-font overflow-hidden bg-white">
+        <section className="text-gray-700 bg-gray-100 body-font overflow-hidden bg-white">
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <Image src="https://images.unsplash.com/photo-1599305090598-fe179d501227" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." height="100" width="50" className="w-full h-full object-center object-cover"/>
