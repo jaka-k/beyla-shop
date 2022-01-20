@@ -12,11 +12,7 @@ export default function Home() {
     <div className='font-Raleway'>
       <Head>
         <title>Beyla - Apicosmetics</title>
-        <meta name="beyla apicosmetics shop" content="Beyla Apicosmetics - Natural Skincare" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Header/>
       <Banner/>
       <ProductGrid/>
       <AboutBanner/>
