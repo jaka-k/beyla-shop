@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import AboutElement from '../components/AboutElement';
 
 
 function about() {
@@ -8,6 +9,7 @@ function about() {
       <Head>
         <title>Beyla - Apicosmetics</title>
       </Head>
+      <AboutElement/>
       
     </div>
   );

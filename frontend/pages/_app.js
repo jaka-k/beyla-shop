@@ -1,14 +1,19 @@
-import Header from '../components/Header'
-import '../styles/globals.css'
+import store from '../redux/store';
+import { Provider } from 'react-redux';
+import Header from '../components/Header';
+import '../styles/globals.css';
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
-
     <>
-  <Header/>
-<Component {...pageProps} />
-  </>
-    )
+      <Provider store={store}>
+        <Header />
+        <Component {...pageProps} />
+        <Footer/>
+      </Provider>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

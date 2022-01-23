@@ -1,6 +1,12 @@
+WARNING!!! ONLY FOR LEARNING PURPUSES!
+
+node-fetch vunrability! Run npm audit on ./frontend for more info.
 
 ? Next.js for Static Site Generator
 ? Integrate with Tailwind CSS (w/ JIT mode)
+
+Frontend not done as meticoulously as it should, cause this project is a leraning project where i try to integrete an node server with an next app.
+
 
 I decided to do this project in Next.js because of its superior SSR abilities towards a regular React.js project.
 

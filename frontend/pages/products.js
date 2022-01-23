@@ -1,15 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
-import Header from '../components/Header'
+
 
 function products() {
+
+  
     return (
         <>
         <Head>
         <title>Beyla - Apicosmetics</title>
       </Head>
-        <section className="text-gray-700 bg-gray-100 body-font overflow-hidden bg-white">
+        <section className="text-gray-700 bg-gray-100 body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <Image src="https://images.unsplash.com/photo-1599305090598-fe179d501227" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." height='235vw' width='235vw' className="object-center object-cover"/> 

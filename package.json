@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "server": "nodemon backend/server",
-    "client": "npm start --prefix frontend",
+    "client": "cd ./frontend && npm run dev",
     "start": "node backend/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
@@ -29,5 +29,8 @@
     "express": "^4.17.2",
     "express-async-handler": "^1.2.0",
     "mongoose": "^6.1.7"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
   }
 }
