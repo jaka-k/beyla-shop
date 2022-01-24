@@ -5,11 +5,12 @@ import AltButton from './AltButton';
 
 function AboutBanner() {
   return (
-    <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div className="bg-gray-100 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <section className="text-gray-600 body-font max-w-2xl pt-4 pb-16 sm:pb-24 lg:pb-32 lg:max-w-none">
         <div className="container mx-auto flex py-12 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <Image
+              priority
               className="object-cover object-center rounded"
               alt="hero"
               height="400vw"

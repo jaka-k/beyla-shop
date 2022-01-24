@@ -91,7 +91,7 @@ function cart() {
           <span className="font-semibold text-sm uppercase">Izdelki 3</span>
           <span className="font-semibold text-sm">590$</span>
         </div>
-        <div>
+        <div className='flex'>
           <label className="font-medium inline-block mb-3 text-sm uppercase">Dostava</label>
           <select className="block p-2 text-gray-600 w-full text-sm">
             <option>Standard Dostava - $10.00</option>

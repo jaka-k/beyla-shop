@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-function AltButton({ className, children, href }) {
+function AltButton ({ className, children, href }) {
   return (
     <>
       {href ? (
