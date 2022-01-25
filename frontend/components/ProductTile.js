@@ -11,7 +11,7 @@ const ProductTile = ({ name, image, category, price, id }) => (
         <a>
         <Image
           src={image}
-          alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+          alt="Skincare"
           layout="fill"
           className="w-full h-full object-center object-cover"
           />

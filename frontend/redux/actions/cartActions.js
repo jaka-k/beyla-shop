@@ -1,11 +1,13 @@
 import axios from "axios";
 import { CART_ADD_ITEM } from "../constants/cartConstants";
-import {useCookies} from 'react-cookie'
+import Cookie from 'js-cookie'
+
+
 
 
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-    const [cookie, setCookie] = useCookies(["cartItems"])
+   
     const {data} = await axios.get(`/api/products/${id}`)
 
     dispatch({
@@ -20,9 +22,6 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
         }
     })
 
-    setCookie('cartItems', JSON.stringify(getState().cart.cartItems), {
-        path: "/",
-        sameSite: true
-    })
+    Cookie.set('cartItems', JSON.stringify(getState().cart.cartItems))
     
 }

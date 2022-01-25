@@ -50,7 +50,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products">
+                  <Link href="/products/61e9aeb603aaf15f42d37dac">
                     <a className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
                       Izdelki
                     </a>
@@ -178,7 +178,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products">
+                  <Link href="/products/61e9aeb603aaf15f42d37dac">
                     <a className="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
                       Izdelki
                     </a>

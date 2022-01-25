@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../../redux/actions/productActions';
 import Button from '../../components/Button';
 import { useState } from 'react';
+import Link from 'next/link';
 
 function ProductDetails() {
   const [product, setProduct] = useState();
@@ -45,18 +46,35 @@ function ProductDetails() {
       ) : error ? (
         <h3>{error}</h3>
       ) : (
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-12 mx-auto">
+          <nav class="md:ml-auto md:mr-auto mb-12 flex flex-wrap items-center font-semibold justify-center">
+            <Link href="/products/61e9aeb603aaf15f42d37dac">
+              <a class="mr-5 hover:text-indigo-500 hover:underline">Propolis</a>
+            </Link>
+            <p className='mr-8'>|</p>
+            <Link href="/products/61e9aeb603aaf15f42d37dad">
+              <a class="mr-5 hover:text-indigo-500 hover:underline">Beauty</a>
+            </Link>
+            <p className='mr-8'>|</p>
+            <Link href="/products/61e9aeb603aaf15f42d37dae">
+              <a class="mr-5 hover:text-indigo-500 hover:underline">Power</a>
+            </Link>
+          </nav>
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <Image
               src={product.image}
-              alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-              height="235vw"
-              width="235vw"
+              alt="Skincare cream"
+              height="230vw"
+              width="230vw"
               className="object-center object-cover"
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-              <h2 className="text-sm title-font text-gray-500 tracking-widest">{product.category}</h2>
-              <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{product.name}</h1>
+              <h2 className="text-sm title-font text-gray-500 tracking-widest">
+                {product.category}
+              </h2>
+              <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+                {product.name}
+              </h1>
               <div className="flex mb-4">
                 <span className="flex pl-3 py-2 border-l-2 border-gray-200">
                   <a className="text-gray-500">
@@ -94,9 +112,7 @@ function ProductDetails() {
                   </a>
                 </span>
               </div>
-              <p className="leading-relaxed">
-                {product.description}
-              </p>
+              <p className="leading-relaxed">{product.description}</p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
                 <div className="flex items-center">
                   <span className="mr-3">Količina</span>

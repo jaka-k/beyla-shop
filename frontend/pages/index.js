@@ -8,13 +8,11 @@ import Testimonials from '../components/Testimonials';
 import { listProducts } from '../redux/actions/productActions';
 
 export default function Home() {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(listProducts())
-  }
-  , [dispatch]);
+    dispatch(listProducts());
+  }, [dispatch]);
 
   return (
     <div className="font-Raleway">
@@ -28,3 +26,4 @@ export default function Home() {
     </div>
   );
 }
+

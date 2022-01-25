@@ -3,19 +3,14 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { productListReducer } from './reducers/productReducers';
 import { cartReducer } from './reducers/cartReducers';
-import { Cookies } from 'react-cookie';
+import Cookies from 'js-cookie';
 
 const reducer = combineReducers({
   productList: productListReducer,
   cart: cartReducer,
 });
 
-
-const cookies = new Cookies()
-
-const cartItemsFromStorage = cookies.get(["cartItems"])
-  ? JSON.parse(cookies.get(["cartItems"]))
-  : [];
+const cartItemsFromStorage = Cookies.get("cartItems") ? JSON.parse(Cookies.get("cartItems")) : [];
 
 const initialState = {
   cart: { cartItems: cartItemsFromStorage },
