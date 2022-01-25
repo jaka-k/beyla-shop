@@ -5,7 +5,8 @@ The goal of this project was to facilitate my recently accuired knowledge of the
 More specifically the Next.js framework was used for the frontend because of its superior SSR abilities in comparison with a plain React.js project.
 
 Instead of using a UI framework like Bootstrap, I used some premade componenets from UI kits that were written in Tailwind, which i then costumized for my needs. There were also some components completly design by me in Tailwind.
-The choice of Tailwindcss as the CSS framework was mainly because of its convinience of writting CSS directly in JS code.
+
+The choice of Tailwindcss as the CSS framework was mainly because of its convinience of writting CSS directly in JS code. (Integrated with Tailwind CSS (w/ JIT mode))
 
 The biggest challange was implementing some of the concepty i learned in React to Next.js.
 
@@ -15,12 +16,7 @@ The small server is written in Node and Express (as i implied with the MERN stac
 
 node-fetch vunrability! Run npm audit on ./frontend for more info.
 
-? Next.js for Static Site Generator
-? Integrate with Tailwind CSS (w/ JIT mode)
 
-Frontend not done as meticoulously as it should, cause this project is a leraning project where i try to integrete an node server with an next app.
-
-Nonethless the componennts need some adjustments for Next.js
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
