@@ -17,7 +17,7 @@ const ProductGrid = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto pt-4 pb-16 sm:pb-24 lg:pb-32 lg:max-w-none">
             <h2 className="text-2xl font-bold pt-4 pb-4 text-gray-900">
-              Ponudba
+              Ponudba Krem
             </h2>
             <p className="pt-4">
               Dolor magna eget est lorem. Proin libero nunc consequat interdum

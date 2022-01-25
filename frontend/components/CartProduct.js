@@ -1,11 +1,28 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/actions/cartActions';
+import { addToCart, removeFromCart } from '../redux/actions/cartActions';
 
 function CartProduct({ product, name, price, qty, image }) {
+  const dispatch = useDispatch();
+  const [inputValue, setInputValue] = useState(qty);
 
-  const dispatch = useDispatch()
+  const subtractProductQuantity = () => {
+    if (inputValue <= 1) return;
+    setInputValue(inputValue - 1);
+  };
+  const addProductQuantity = () => {
+    setInputValue(inputValue + 1);
+  };
+
+  useEffect(() => {
+    dispatch(addToCart(product, inputValue));
+  }, [inputValue]);
+
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id))
+  }
 
   return (
     <div>
@@ -25,34 +42,37 @@ function CartProduct({ product, name, price, qty, image }) {
           <div className="flex flex-col justify-around ml-4 flex-grow">
             <span className="font-bold text-sm">{name}</span>
             <a
-              href="#"
+              onClick={() => removeFromCartHandler(product)}
               className="font-semibold hover:text-red-500 text-gray-500 text-xs">
               Odstrani
             </a>
           </div>
         </div>
         <div className="flex justify-center w-1/5">
-          <svg onClick={(e) => dispatch(addToCart(product, qty--))} className="fill-current text-gray-600 w-3 cursor-pointer hover:text-gray-900" viewBox="0 0 448 512">
-            <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-          </svg>
-
+          <button
+            onClick={() => subtractProductQuantity()}
+            className="fill-current text-gray-600 text-2xl font-bold w-5 cursor-pointer hover:text-gray-900">
+            -
+          </button>
           <input
             className="mx-2 border text-center w-8"
             type="text"
-            value={qty}
-            onChange={(e) => dispatch(addToCart(product, Number(e.target.value)))}
+            value={inputValue}
+            onChange={(e) =>
+              dispatch(addToCart(product, Number(e.target.value)))
+            }
           />
-          <div >
-          <svg onClick={(e) => dispatch(addToCart(product, qty++))} className="fill-current text-gray-600 w-3 cursor-pointer hover:text-gray-900" viewBox="0 0 448 512">
-            <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-          </svg>
-          </div>
+          <button
+            onClick={() => addProductQuantity()}
+            className="fill-current text-gray-600 text-2xl font-bold w-5 cursor-pointer hover:text-gray-900">
+            +
+          </button>
         </div>
         <span className="text-center w-1/5 font-semibold text-sm">
           €{price}
         </span>
         <span className="text-center w-1/5 font-semibold text-sm">
-          €{price * qty}
+          €{price * inputValue}
         </span>
       </div>
     </div>

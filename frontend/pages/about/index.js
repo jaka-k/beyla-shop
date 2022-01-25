@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import AboutElement from '../components/AboutElement';
-
+import AboutElement from '../../components/AboutElement'
 
 function about() {
   return (

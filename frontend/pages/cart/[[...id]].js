@@ -9,20 +9,24 @@ import { useRouter } from 'next/router';
 function cart() {
   const [sumQty, setSumQty] = useState(0);
   const router = useRouter();
-  const productId = router.query.index;
+  const productId = router.query.id;
   const qty = router.query.qty ? Number(router.query.qty) : 1;
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-
-  console.log(qty);
+  const totalQuantity = cartItems.reduce((a, b) => {
+    return a + b.qty;
+  }, 0);
+  const totalSum = cartItems.reduce((a, b) => {
+    return a + (b.qty * b.price)
+  }, 0)
 
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
   }, [dispatch, productId, qty]);
-   
+
 
   return (
     <>
@@ -36,8 +40,8 @@ function cart() {
       </Head>
       <section className="bg-gray-100 pt-6">
         <a
-          href="#"
-          className="flex font-semibold text-indigo-600 text-sm ml-4 pl-12">
+          onClick={() => router.back()}
+          className="flex cursor-pointer font-semibold text-indigo-600 text-sm ml-4 pl-12">
           <svg
             className="fill-current mr-2 text-indigo-600 w-4"
             viewBox="0 0 448 512">
@@ -50,7 +54,9 @@ function cart() {
             <div className="p-2 lg:w-3/4 bg-white lg:p-10">
               <div className="flex justify-between border-b pb-8">
                 <h1 className="font-semibold text-lg lg:text-2xl">Košarica</h1>
-                <h2 className="font-semibold text-lg lg:text-2xl">{sumQty} Izdelki</h2>
+                <h2 className="font-semibold text-lg lg:text-2xl">
+                  {totalQuantity} Izdelki
+                </h2>
               </div>
               <div className="flex mt-10 mb-5">
                 <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
@@ -66,22 +72,25 @@ function cart() {
                   Skupaj
                 </h3>
               </div>
-              {cartItems ? cartItems.map(item => {  
-                console.log('TUKAJ SEM JAAAAZ', item);
-                     return <CartProduct key={item.image} product={item.product} name={item.name} price={item.price} qty={item.qty} image={item.image}/>
-              }
-              
-                ) : ''}
+              {cartItems
+                ? cartItems.map((item) => {
+                    return (
+                      <CartProduct
+                        key={item.image}
+                        product={item.product}
+                        name={item.name}
+                        price={item.price}
+                        qty={item.qty}
+                        image={item.image}
+                      />
+                    );
+                  })
+                : ''}
             </div>
 
             <div id="summary" className=" px-8 py-10">
               <h1 className="font-semibod text-2xl border-b pb-8">Naročilo</h1>
-              <div className="flex justify-between mt-10 mb-5">
-                <span className="font-semibold text-sm uppercase">
-                  Izdelki 3
-                </span>
-                <span className="font-semibold text-sm">590$</span>
-              </div>
+
               <div className="flex justify-between">
                 <label className="font-medium inline-block mb-3 text-sm uppercase">
                   Dostava
@@ -111,7 +120,7 @@ function cart() {
               <div className="border-t mt-8">
                 <div className="flex font-semibold justify-between py-6 text-sm uppercase">
                   <span>Skupaj</span>
-                  <span>$600</span>
+                  <span>€ {totalSum}</span>
                 </div>
                 <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
                   Plačaj
