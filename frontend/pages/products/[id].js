@@ -21,7 +21,6 @@ function ProductDetails() {
   const { products, loading, error } = useSelector(
     (state) => state.productList
   );
-  console.log(products);
 
   useEffect(() => {
     if (!loading) {
@@ -36,8 +35,6 @@ function ProductDetails() {
       }
     }
   }, [products, loading, router]);
-
-  console.log(product);
 
   return (
     <>
